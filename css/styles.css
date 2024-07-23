@@ -1,0 +1,52 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(66, 63, 63);
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    padding: 1em;
+}
+
+/* Media*/
+
+/* Dispositivos móveis */
+@media (max-width: 600px) {
+    header, footer {
+        padding: 0.5em 0;
+    }
+
+    main {
+        padding: 0.5em;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 768px) {
+    main {
+        padding: 1em 2em;
+    }
+}
+
+/* Desktops */
+@media (min-width: 769px) {
+    main {
+        padding: 2em 4em;
+    }
+}
