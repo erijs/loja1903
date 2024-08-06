@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descrição do projeto">
     <meta name="author" content="Seu Nome">
-    <title>1903 store</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>1903 store - Carrinho de compras</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1 aria-label="Pagina principal 1903 store">1903 store</h1>
+        <h1>1903 store</h1>
         <nav class="menu" role="navigation" aria-label="Menu principal">
             <button class="btn-menu" id="home" aria-label = "Ir para pagina principal" role="menuitem">
                     <i class="bi-house"></i>
                 </a>
             </button>   
             <button class="btn-menu" id="sobre" aria-label = "Ir para pagina sobre" role="menuitem">
-                <a href="sobre.html" class="menu__item menu_link" aria-label="Ir para pagina sobre">Sobre</a>
+                Sobre
             </button> 
             <button class="btn-menu" id="carrinho" aria-label = "Ir para o carrinho de compras" role="menuitem">
                 <i class="bi-cart" aria-label="Carrinho de compras"></i>
@@ -27,14 +26,32 @@
         </nav>
     </header>
     <main>
-        <article id="produtos" aria-label="Produtos da loja">
-
-        </article>
+        <h2 class="title">Seu carrinho de compras</h2>
+        <h1 id="status" hidden="true">Carrinho vazio</h1>
+        <div class="container">
+          
+        <div class="total" id="carrinho-total" aria-label = "Total do carrinho de compras">
+            <h1 id="total-carrinho"></h1>
+        </div>
+        <div id="carrinho-acoes" class="acoes-carrinho" role="group" aria-label = "Ações do carrinho de compras">
+                <button id="limpar-carrinho" class="btn btn--danger" aria-label = "Limpar carrinho"
+                onclick="limparCarrinho()">
+                Limpar carrinho
+            </button>
+            <button id="continuar-comprando" class="btn btn--primary" aria-label = "Continuar comprando">
+                Continuar comprando
+            </button>   
+            <button id="finalizar-compra" class="btn btn--success" aria-label = "Finalizar compra"
+            onclick="finalizarCompra()">
+            Finalizar compra
+        </button>
+         </div>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 <a href="https://github.com/erijs/" aria-label = "github do autor Éri Jr">Éri jr</a>. Todos os direitos reservados.</p>
     </footer>
-    <script src="js/scripts.js"></script>
-    
+    <script src="js/cart.js"></script>
+   
 </body>
-</html> 
+</html>

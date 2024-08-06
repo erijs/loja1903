@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descrição do projeto">
+    <meta name="author" content="Seu Nome">
+    <title>1903 store - Checkout</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>1903 store</h1>
+        <nav class="menu" role="navigation" aria-label="Menu principal">
+            <button class="btn-menu" id="home" aria-label = "Ir para pagina principal" role="menuitem">
+                    <i class="bi-house"></i>
+                </a>
+            </button>
+        </nav>
+    </header>
+    <main>  
+        <h1 id="final-h1" aria-label="Obrigado por sua compra!">Obrigado por sua compra!</h1>
+        <div class="finalizado">
+            <h2 class="title-ch"></h2>
+            <ul class="produtos_adquiridos" aria-label="Lista de produtos adquiridos">
+
+            </ul>
+            <h2 class="total-ch"></h2>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 <a href="https://github.com/erijs/" aria-label="github do autor Éri jr">Éri jr</a>. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function formatarPreco(preco){
+            preco = preco.toString().replace('.', ',');
+                if (!preco.includes(',')){
+                    preco = preco + ',00';
+                }
+                return  preco.replace(/,(\d)$/, ',$10')
+            }
+
+        let params = new URLSearchParams(window.location.search);
+        let pedido = params.get('pedido')
+        let produtos = JSON.parse(localStorage.getItem(`carrinho`));
+        let list = document.querySelector('.produtos_adquiridos');
+        produtos.forEach((item, index) => {
+            let produto = produtos[index];
+            console.log(produto);   
+            let li = document.createElement('li');
+            li.setAttribute('class', `produto${index + 1}`);
+            li.setAttribute('role', 'listitems');
+            li.setAttribute('aria-label', `${produto.titulo} ${produto.qtd} unidades R$ ${formatarPreco(produto.preco * produto.qtd)}`);
+            li.innerHTML = `${produto.qtd} Un. ${produto.titulo}  <span class="total-list">R$ ${formatarPreco(produto.preco * produto.qtd)}</span>`;
+            list.appendChild(li);
+            
+        });
+        
+        document.querySelector('.total-ch').textContent = `O total do seu pedido foi R$ ${params.get('total')}`
+        document.querySelector('.total-ch').setAttribute('aria-label', `O total do seu pedido foi R$ ${params.get('total')}`);
+        document.querySelector('.title-ch').innerHTML = `Numero do seu pedido ${pedido}`
+        document.querySelector('.title-ch').setAttribute('aria-label', `Numero do seu pedido ${pedido}`);
+        document.querySelector('#home').addEventListener('click', () => {
+            
+            localStorage.removeItem(`carrinho`);
+            window.location = 'index.html'
+        }
+        )
+    </script>   
+   
+</body>
+</html>
