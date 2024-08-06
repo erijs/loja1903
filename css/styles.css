@@ -129,9 +129,10 @@ main {
 }
 
 .filtros {
-    padding: 20px 100px;
-    margin: 20px 0;
-    gap: 20px;
+    font-size: 0.5rem;
+    padding: 20px 20px;
+    margin: 10px 20px;
+    gap: 10px;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;    
@@ -140,15 +141,17 @@ main {
     background-color: #1e1e1e;
 }
 
-select {
-    display: flex;
-    color: #fff;
-    background-color: #1e1e1e;
+#preco-min {
+    width: 80px;
+}
+
+#preco-max {
+    width: 80px;
 }
 
 .btn-busca {
-    width: 60px;
-    height: 40px;
+    width: 40px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
