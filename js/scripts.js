@@ -1,5 +1,6 @@
 const url_base = 'https://api.mercadolibre.com/sites/MLB/search?q=notebooks';
 
+
 let carrinho = localStorage.getItem('carrinho');
 if (carrinho == null){
     carrinho = [];
@@ -27,11 +28,21 @@ function formatarPreco(preco){
     return  preco.replace(/,(\d)$/, ',$10')
 }
 
+document.getElementById('filtrar').addEventListener('click', () => {
+    window.location.reload()
+});
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
     let artigos = document.getElementById('produtos');
-    const url = `${url_base}&limit=25`;
+    const preco_min = document.getElementById('preco-min').value; 
+    const preco_max = document.getElementById('preco-max').value; 
+    let url = `${url_base}`;
+    if (preco_max != '' && preco_min != '' && preco_min != null && preco_max != null) {
+        url = `${url_base}&price=${preco_min}-${preco_max}`;
+    }
+    console.log(url)
     getNotebooks(url).then((data) => {
         const produtos = data.results;
         produtos.forEach((produto, index) => {

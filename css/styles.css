@@ -86,9 +86,9 @@ nav {
     width: 50px;
     height: 50px;
     padding: 1px;
-    color: hsl(226, 66%, 46%);
-    font-size: 1.4rem ;
-    border: solid 1px  #0a8f20  ;
+        color: #fff;
+        font-size: 1.4rem ;
+    border: solid 1.2px  #fff;
     border-radius: 50%;
     background-color: #000000;
 
@@ -102,47 +102,79 @@ nav {
     height: 15px;
     border-radius: 50%;
     font-size: 0.6rem;  
-    background-color: #0a8f20;
+    background-color: #08336b;
     color: #fff;
 }
 
 .btn-menu:hover {
+    cursor: pointer;
     border: solid 0.2rem  #fff;
 }
-#carrinho:hover {   
-    border: solid 0.1rem  #0a8f20;
+
+#carrinho:hover {       
+    cursor: pointer;
+    border: solid 0.08rem  #0a8f20;
 }
 
 main {  
     width: 100%;
-    color: #fff;
+    color: #fff;    
     display: flex; 
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    overflow-y: scroll;
-    scrollbar-width: 50px;
-    margin: auto;
+    margin: 20px 0;
+
 
 }
 
+.filtros {
+    padding: 20px 100px;
+    margin: 20px 0;
+    gap: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;    
+    justify-content: space-evenly;
+    color: #fff;
+    background-color: #1e1e1e;
+}
+
+select {
+    display: flex;
+    color: #fff;
+    background-color: #1e1e1e;
+}
+
+.btn-busca {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    background-color: #08336b;
+    color: #fff;
+}
+
+.btn-busca:hover {
+    cursor: pointer ;
+    border: solid 2px #fff;
+}
 
 #produtos {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;   
     justify-content: center;
-    padding: 50px 20px 50px 20px;
-    gap: 10px;
-    margin: 2% 2%;
-    
-    
+    gap: 10px 10px;
     
 }
 
 #produtos::after {
     content: "";
-    flex: 0 1 350px;
+    flex: 0 1 320px;
+    justify-self: start;    
 }
 
 .card {

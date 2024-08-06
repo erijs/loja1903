@@ -27,6 +27,17 @@
         </nav>
     </header>
     <main>
+        <div class="filtros" id="filtros" role="search" aria-label="Filtros de busca">
+            <i class="bi-funnel" aria-label = "Filtros de busca"></i>
+            <label for="preco-min" aria-label = "Buscar produtos por preço">De R$</label>
+            <input type="text" name="preco-min" id="preco-min" placeholder="De" aria-label = "Buscar produtos">
+            <label for="preco-max" aria-label = "Buscar produtos por preço">Até R$</label>
+            <input type="text" name="preco-max" id="preco-max" placeholder="Até" aria-label = "Buscar produtos">
+
+            <button class="btn-busca" id="filtrar" aria-label = "Filtrar produtos">
+                <i class="bi-search" aria-label = "Filtrar produtos"></i>
+            </button>
+        </div>
         <article id="produtos" aria-label="Produtos da loja">
 
         </article>
