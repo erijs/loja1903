@@ -28,9 +28,6 @@ function formatarPreco(preco){
     return  preco.replace(/,(\d)$/, ',$10')
 }
 
-document.getElementById('filtrar').addEventListener('click', () => {
-    window.location.reload()
-});
 
 
 
@@ -90,15 +87,15 @@ function adicionarCarrinho(valor) {
     existe = carrinho.some(item => item.id == valor.id)
     if (!existe){
         carrinho.push(valor);
-    
-    for (let index in carrinho) {
-        if (carrinho[index].id == valor.id){
-            carrinho[index].qtd = carrinho[index].qtd + 1;
+        
+        for (let index in carrinho) {
+            if (carrinho[index].id == valor.id){
+                carrinho[index].qtd = carrinho[index].qtd + 1;
+            }
         }
-        }
-    console.log(carrinho)
-    document.getElementById('quantidade').textContent = carrinho.length;
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        console.log(carrinho)
+        document.getElementById('quantidade').textContent = carrinho.length;
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
     };
 }
 
@@ -119,3 +116,7 @@ document.getElementById('sobre').addEventListener('click', () => {
     window.location = 'sobre.html';
 })
 
+
+document.getElementById('filtrar').addEventListener('click', () => {
+    window.location.reload()
+});
